@@ -1,0 +1,12 @@
+# Datos sensibles - NUNCA subir
+.env
+claves/
+tokens/
+resultados/
+clientes.json
+config.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
