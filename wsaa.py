@@ -69,6 +69,8 @@ class WSAA:
 
         crt_pem y key_pem son el contenido PEM del certificado y la clave
         (vienen de la base de datos, no de archivos)."""
+        # Asegurar la carpeta en cada llamada (puede haberse borrado en runtime)
+        os.makedirs(CARPETA_TOKENS, exist_ok=True)
         # El cache incluye el ambiente: un token de homologacion NO sirve en produccion
         ruta_cache = os.path.join(
             CARPETA_TOKENS, f"{cuit}_{servicio}_{self.ambiente}.json")
